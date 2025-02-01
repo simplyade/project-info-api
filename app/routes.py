@@ -7,7 +7,7 @@ project_info_router = APIRouter()
 #Email Address
 email ="adebisioluseye250@gmail.com"
 #GitHUB repository URL
-github_url = "https://github.com/simplyade/myrepo"
+github_url = "https://github.com/simplyade/project-info-api"
 
 
 @project_info_router.get("/", response_model=BasicInfo)
