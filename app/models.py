@@ -3,5 +3,5 @@ from pydantic.types import datetime
 
 class BasicInfo(BaseModel):
    email:str
-   current_timezone:datetime
+   current_datetime:datetime
    github_url:str
