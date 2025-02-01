@@ -17,7 +17,7 @@ async def read_project_info():
     try:
         basic_info = BasicInfo(
             email= email,
-            current_timezone =current_datetime,
+            current_datetime =current_datetime,
             github_url=github_url
                  )
         
