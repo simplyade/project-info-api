@@ -19,4 +19,4 @@ LOG_FORMAT = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 API_DOCS_URL = "/docs"
 
 #Job Posting Settings
-JOB_POSTING_URL = "https://hng.tech/hire/python-developers"
+#JOB_POSTING_URL = "https://hng.tech/hire/python-developers"

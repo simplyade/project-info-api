@@ -1,17 +1,28 @@
 from fastapi import APIRouter
-from app.models import ProjectInfo
+from app.models import BasicInfo
+from datetime import datetime
+import pytz
 
 project_info_router = APIRouter()
+#Email Address
+email ="adebisioluseye250@gmail.com"
+#GitHUB repository URL
+github_url = "https://github.com/simplyade/myrepo"
 
-@project_info_router.get("/project-info", response_model=ProjectInfo)
+
+@project_info_router.get("/", response_model=BasicInfo)
 async def read_project_info():
-    project_info = ProjectInfo(
-        project_description="This is a simple API that provides information about a project.",
-        api_documentation={
-            "endpoint_url": "https://api.example.com/project-info",
-            "request_format": "None",
-            "response_format": "JSON"
- },
-        job_posting="https://hng.tech/hire/python-developers"
-    )
-    return project_info
+    current_datetime =datetime.now(pytz.utc).isoformat(timespec='milliseconds')
+    
+    try:
+        basic_info = BasicInfo(
+            email= email,
+            current_timezone =current_datetime,
+            github_url=github_url
+                 )
+        
+        return basic_info.dict(exclude_none=True)
+    except Exception as e:
+        return {"error":str(e)}
+        
+    

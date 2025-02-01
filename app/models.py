@@ -1,6 +1,7 @@
 from pydantic import BaseModel
+from pydantic.types import datetime
 
-class ProjectInfo(BaseModel):
-    project_description: str
-    api_documentation: dict
-    job_posting: str
+class BasicInfo(BaseModel):
+   email:str
+   current_timezone:datetime
+   github_url:str
